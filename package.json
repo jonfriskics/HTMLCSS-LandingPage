@@ -10,7 +10,6 @@
     "test:module3": "cross-env NODE_ENV=test mocha './test/unit/module3.test.js' || true",
     "test:module4": "cross-env NODE_ENV=test mocha './test/unit/module4.test.js' || true",
     "test:module5": "cross-env NODE_ENV=test mocha './test/unit/module5.test.js' || true",
-    "test:module6": "cross-env NODE_ENV=test mocha './test/unit/module6.test.js' || true",
     "visual:modules": "cross-env backstop test --config='./test/visual/modules.json' || true",
     "visual:module1": "cross-env backstop test --config='./test/visual/module1.json' || true",
     "visual:module2": "cross-env backstop test --config='./test/visual/module2.json' || true",
