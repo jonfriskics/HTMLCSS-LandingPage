@@ -1,0 +1,9 @@
+/************* BASE STYLES *************/
+* { box-sizing: border-box; }
+body { font-family: 'Open Sans', sans-serif; font-size: 14px; line-height: 1.4; color: #364147; margin: 0; }
+input, button { font-family: inherit; font-size: inherit; }
+a { color: #faa541; text-decoration: none; }
+ul { padding: 0; margin: 0; list-style: none; }
+nav { padding: 10px 0; }
+h1, h2, h3, h4, h5, h6 { margin: 0; }
+/***************************************/
