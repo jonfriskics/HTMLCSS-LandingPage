@@ -1,7 +1,7 @@
 {
-  "name": "htmlcss-carvedrock",
+  "name": "htmlcss-landingpage",
   "version": "1.0.0",
-  "description": "HTML CSS Pluralsight Project",
+  "description": "Build a Rock Climbing Company Landing Page with HTML & CSS - https://pluralsight.com",
   "scripts": {
     "start": "lite-server",
     "test": "cross-env NODE_ENV=test mocha './test/unit/*.test.js' || true",
@@ -19,25 +19,27 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tjbell/HTMLCSS-CravedRock.git"
+    "url": "git+https://github.com/pluralsight-projects/HTMLCSS-LandingPage.git"
   },
   "author": "Thomas Bell",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tjbell/HTMLCSS-CravedRock/issues"
+    "url": "https://github.com/pluralsight-projects/HTMLCSS-LandingPage/issues"
   },
-  "homepage": "https://github.com/tjbell/HTMLCSS-CravedRock#readme",
-  "devDependencies": {
-    "backstopjs": "^3.8.2",
+  "homepage": "https://github.com/pluralsight-projects/HTMLCSS-LandingPage#readme",
+  "dependencies": {
     "chai": "^4.2.0",
     "cheerio": "^1.0.0-rc.2",
     "cross-env": "^5.2.0",
-    "lite-server": "^2.4.0",
     "lodash": "^4.17.11",
     "mocha": "^5.2.0",
     "postcss": "^7.0.5",
     "postcss-merge-longhand": "^4.0.7",
     "postcss-values-parser": "^2.0.0",
     "ramda": "^0.25.0"
+  },
+  "devDependencies": {
+    "backstopjs": "^3.8.2",
+    "lite-server": "^2.4.0"
   }
 }
