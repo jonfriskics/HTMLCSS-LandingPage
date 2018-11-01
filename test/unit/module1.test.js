@@ -2,7 +2,7 @@ const {
   container, flex, section, flexColumn,
   flexOne, alignCenter, center, spaceBetween,
   btn, btnDefault, btnPrimary, formControl,
-  textLight, textSecondary, declarations } = require('./declarations');
+  textLight, textSecondary, textPrimary, declarations } = require('./declarations');
 
 describe('Utility Classes', () => {
 

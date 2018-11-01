@@ -16,9 +16,11 @@ Every time you want to check your work locally you can type that command, and it
 
 As you move through the modules, you can run module-specific tests with the script `npm run test:module1`, replacing the number with one that corresponds with the module you are working in.
 
+You can also run a visual test using the command `npm run visual:module1`, replacing the number with one that corresponds with the module you are working in.
+
 ## Previewing Your Work
 
-In order to see your changes in a browser, you can run `npm start` from the command line to start the application. This will open a browser and you should see your landing page.
+In order to see your changes in a browser, you can run `npm start` from the command line. This will open a browser and you should see your landing page.
 
 # Module 01 - Utility Classes
 
@@ -277,7 +279,7 @@ Adjust the font size to `63px`, bump up the font weight to `700`, and set the `l
 
 ## 3.3 - Hero Paragraph
 
-@hero-paragraph Now, let's change the paragraph element to match the <h1> and <h2> elements. Select all `<p>` elements in the `.hero <div>` and change these font properties: letter spacing to `2px`, font weight to `700`, font size to `21px`. For this element's `margin`, zero out the top, left and right. Add `10px` to the bottom. **Hint: Using the 3 value shorthand for `margin`.**
+@hero-paragraph Now, let's change the paragraph element to match the `<h1>` and `<h2>` elements. Select all `<p>` elements in the `.hero <div>` and change these font properties: letter spacing to `2px`, font weight to `700`, font size to `21px`. For this element's `margin`, zero out the top, left and right. Add `10px` to the bottom. **Hint: Using the 3 value shorthand for `margin`.**
 
 ## 3.4 - Hero Class Attribute
 
@@ -328,7 +330,7 @@ The images in these columns should be full width. Create a rule that selects the
 - `text-transform` - `uppercase`
 - `text-align` - `center` 
 
-## 3.11 - Category Text
+## 3.11 - Category Text Divs
 
 @category-text-divs All `<div>`'s that are children(`>`) of a `.category-text` element should have the font properties: 
 
