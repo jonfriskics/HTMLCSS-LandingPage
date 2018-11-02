@@ -5,7 +5,6 @@ const postcss = require('postcss');
 const short = require('postcss-merge-longhand');
 const cheerio = require('cheerio');
 const R = require('ramda');
-const _ = require('lodash');
 
 const source_html = fs.readFileSync(path.join(process.cwd(), 'index.html'), 'utf8');
 const $ = cheerio.load(source_html);
@@ -38,12 +37,15 @@ const rules = css.nodes
   });
 
 const diff = (object, base, name) => {
-  const changes = (object, base) => {
-    return _.transform(object, (result, value, key) => {
-      if (!_.isEqual(value, base[key])) {
-        result[key] = (_.isObject(value) && _.isObject(base[key])) ? changes(value, base[key]) : value;
+  const isObject = o => o instanceof Object && o.constructor === Object;
+  const changes = (base, check) => {
+    const results = {};
+    for (const key in base) {
+      if (R.not(R.equals(base[key], check[key]))) {
+        results[key] = (isObject(base[key]) && isObject(check[key])) ? changes(base[key], check[key]) : base[key];
       }
-    });
+    }
+    return results;
   }
 
   const results = changes(object, base);

@@ -39,9 +39,9 @@ describe('Full Banner', () => {
   });
 
   it(`\`main.css\` should contain the classes, \`${declarations.fullBanner.selector}\`, \`${declarations.fullBannerImage.selector}\`, and \`${declarations.fullBannerSidebar.selector}\`, they should be used in \`index.html\` @full-banner-class-attributes`, () => {
-    assert(fullBanner.class, 'The `.full-banner` class should exist before applying it in the HTML.');
-    assert(fullBannerImage.class, 'The `.full-banner-image` class should exist before applying it in the HTML.');
-    assert(fullBannerSidebar.class, 'The `.full-banner-sidebar` class should exist before applying it in the HTML.');
+    assert(fullBanner.class, 'The `.full-banner` class should exist before it can be used in the HTML.');
+    assert(fullBannerImage.class, 'The `.full-banner-image` class should exist before it can be used in the HTML.');
+    assert(fullBannerSidebar.class, 'The `.full-banner-sidebar` class should exist before it can be used in the HTML.');
     assert($('nav ~ div > section:last-child').hasClass(fullBanner.class),
       'The first `<section>` in the `<!-- FULL BANNER -->` block does not have a class of `full-banner`.');
     assert($('nav ~ div > section:last-child > div:first-child').hasClass(fullBannerImage.class),
