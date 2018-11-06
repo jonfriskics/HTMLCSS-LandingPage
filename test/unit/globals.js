@@ -36,28 +36,29 @@ const rules = css.nodes
     return declarations;
   });
 
-const diff = (object, base, name) => {
-  const isObject = o => o instanceof Object && o.constructor === Object;
-  const changes = (base, check) => {
+const diff = (check, base, name) => {
+
+  const changes = (check, base) => {
     const results = {};
-    for (const key in base) {
-      if (R.not(R.equals(base[key], check[key]))) {
-        results[key] = (isObject(base[key]) && isObject(check[key])) ? changes(base[key], check[key]) : base[key];
+    for (const key in check) {
+      if (R.not(R.equals(check[key], base[key]))) {
+        results[key] = (R.is(Object, check[key]) && R.is(Object, base[key])) ? changes(check[key], base[key]) : check[key];
       }
     }
     return results;
   }
 
-  const results = changes(object, base);
+  const results = R.omit(['unique'], changes(check, base));
+
   if (R.isEmpty(results)) {
     return { assert: true, message: '', class: base.class, selector: base.selector };
   } else {
     let message = 'It looks like your ' + name + ' rule is missing the following:\n';
-    let selectorMessage = 'It seems that you are missing a rule with a selector of '
+    let selectorMessage = 'It seems that you are missing a rule with a selector like '
     for (let key in results) {
       if(key == 'selector') {
-        message = selectorMessage + '`' + results[key] + '`.';
-      } else {
+        message = selectorMessage + '`' + results[key] + '`, or you are missing key declarations in that rule.';
+      } else if (key !== 'unique') {
         message += '\n- `' + key + ': ' + results[key] + '`';
       }
       
@@ -66,15 +67,10 @@ const diff = (object, base, name) => {
   }
 };
 
-const matchAny = (decl, selectors=[]) => {
+const matchAny = decl => {
   const decls = [];
   for (let prop in decl) {
     decls.push(R.propEq(prop, decl[prop]));
-  }
-
-  const selectorFunctions = [];
-  for (let index = 0; index < selectors.length; index++) {
-    selectorFunctions.push(R.propEq('selector', selectors[index]));
   }
 
   const matches = R.filter(R.anyPass(decls), rules)
@@ -83,37 +79,31 @@ const matchAny = (decl, selectors=[]) => {
   } else if (matches.length === 1) {
     return matches[0];
   } else if (matches.length >= 2) {
-    return R.reject(R.anyPass(selectorFunctions), matches)[0];
+    const uniqueChecks = [];
+    const unique = decl.unique;
+    for (let prop in unique) {
+      uniqueChecks.push(R.propEq(prop, unique[prop]));
+    }
+    const results = R.filter(R.allPass(uniqueChecks), matches);
+    return R.isEmpty(results) ? {} : results[0];
   }
 };
 
-const diffAny = (decl, name, selectors=[]) => {
-  return diff(decl, matchAny(decl, selectors), '`container`');
-}
+const diffAny = (decl, name) => diff(decl, matchAny(decl), name);
 
-const matchAll = decl => {
-  const rule = rules.filter(item => {
-    for (let key in decl) {
-      if (item[key] === undefined || item[key] != decl[key])
-      return false;
-    }
-    return true;
-  });
-  return rule.length >= 1 ? true : false;
-};
-
-const getRule = selector => { 
-  return rules.filter(rule => rule.selector === selector)[0];
+const getRule = (selector, name) => {
+  const base = rules.filter(rule => rule.selector === selector);
+  if (R.not(R.isEmpty(base))) {
+    return { assert: true, message: '', class: base[0].class, selector: base[0].selector };
+  } else {
+    return { assert: false, message: 'It seems that you are missing a rule with a selector of '+ name + '.' };
+  }
 };
 
 Object.assign(global, {
   assert,
   $,
-  css,
   rules,
-  matchAny,
-  matchAll,
-  diff,
   diffAny,
   getRule
 });
