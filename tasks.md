@@ -131,7 +131,7 @@ Add the `container` class that was just created to the following HTML elements i
 - Round the corners by `3px`
 - change the line height to `1.4`
 
-Also, Create two different button styles `default` and `primary`. The color of the text for both should be `white`. The default background color is `#faa541`. The primary background color should be `#364147`.
+Also, Create two different button styles `btn-default` and `btn-primary`. The color of the text for both should be `white`. The `btn-default` background color is `#faa541`. The `btn-primary` background color should be `#364147`.
 
 ## 1.11 - Buttons Class Attribute
 
@@ -156,9 +156,11 @@ This class should change the `display` to `block`, and add padding of `6px` top/
 
 In the main stylesheet, below the `.form-control` class, add three classes: `.text-light`, `.text-secondary`, and `.text-primary`.
 
-The light and secondary classes should have a font size of `30px`. The light color is `#a0a0a0` and the secondary color is `#faa541`. 
+The light class should have a font size of `30px` and a color of `#a0a0a0`. 
 
-The primary class should have a font size of `16px` and a color of `#364147`. 
+The secondary font size is also `30px` and the color is `#faa541`.
+
+The primary class needs a font size of `16px` and a color of `#364147`. 
 
 ## 1.15 - Typography Class Attributes
 
