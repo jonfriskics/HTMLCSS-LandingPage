@@ -96,3 +96,8 @@ section {
   border: 0;
   padding: 0;
 }
+.nav-list {
+  padding-left: 0;
+  width: 575px;
+  margin-top: 10px;
+}
