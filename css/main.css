@@ -355,3 +355,14 @@ footer a:hover {
   font-size: 12px;
   text-align: center;
 }
+.newsletter .link-header {
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+.newsletter .link-subheader {
+  font-style: italic;
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
