@@ -226,3 +226,10 @@ section {
   padding: 30px;
   color: white;
 }
+.full-banner-sidebar h4 {
+  font-size: 40px;
+  font-weight: 700;
+  font-style: italic;
+  color: #637f94;
+  line-height: 1;
+}
