@@ -295,7 +295,7 @@ footer a {
 footer a:hover {
   text-decoration: underline;
 }
-.social ul li {
+.social ul li a {
   display: inline-block;
   width: 23px;
   height: 23px;
