@@ -187,3 +187,8 @@ section {
   text-transform: uppercase;
   text-align: center;
 }
+.category-text > div {
+  font-size: 16px;
+  font-weight: 200;
+  color: #faa541;
+}
