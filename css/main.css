@@ -202,3 +202,13 @@ section {
   margin: 50px 0;
   position: relative;
 }
+.full-banner:before {
+  content: "";
+  position: absolute;
+  border: 1px solid #ffffff;
+  top: 30px;
+  bottom: 30px;
+  left: 50px;
+  right: 50px;
+  z-index: 1;
+}
