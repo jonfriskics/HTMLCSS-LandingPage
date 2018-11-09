@@ -174,3 +174,10 @@ section {
   font-weight: 400;
   margin-top: 5px;
 }
+.category {
+  flex: 0 0 25%;
+  padding: 0 15px;
+}
+.category img {
+  width: 100%;
+}
