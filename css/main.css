@@ -276,3 +276,7 @@ footer:after {
   right: 0;
   z-index: -1;
 }
+.lists {
+  flex: 0 0 75%;
+  padding: 40px 15px;
+}
