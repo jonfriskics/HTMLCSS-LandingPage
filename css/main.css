@@ -78,3 +78,7 @@ section {
   margin-left: -15px;
   margin-right: 60px;
 }
+.logo {
+  max-width: 100%;
+  height: auto;
+}
