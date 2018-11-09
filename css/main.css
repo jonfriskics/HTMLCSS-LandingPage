@@ -317,18 +317,6 @@ footer a:hover {
 .pinterest {
   background-image: url('../img/pinterest.svg');
 }
-.nl {
-  font-size: 12px;
-  font-weight: 400;
-  margin-bottom: 5px;
-}
-.nl-text {
-  font-style: italic;
-  font-size: 12px;
-  font-weight: 400;
-  margin-bottom: 15px;
-}
-
 .ps {
   flex: 0 0 25%;
   padding: 40px 0;
